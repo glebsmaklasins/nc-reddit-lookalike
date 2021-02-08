@@ -1,10 +1,17 @@
 
 import './App.css';
+import Nav from "./components/Nav"
+import Landing from "./components/Landing"
+import {Router} from "@reach/router"
 
 function App() {
   return (
     <div className="App">
-    <h1>helloworld</h1>
+    <Nav/>
+    <Router >
+      <Landing path="/"/>
+      <Landing path="/:sorted/"/>
+    </Router>
     </div>
   );
 }

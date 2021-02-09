@@ -20,3 +20,12 @@ img {
 .featured{
   border: 1px solid green;
 }
+.comment__card {
+border:2px solid blue;
+}
+.comment__sorting{
+  border: 2px solid pink;
+}
+.article__single{
+border: 2px solid green;
+}

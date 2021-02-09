@@ -1,36 +1,52 @@
 import React, { Component } from 'react'
 import * as api from "../../api"
 import ArticleCard from "./ArticleCard"
+import SortingBlock from "./SortingBlock"
 
 export default class ArticleList extends Component {
   state ={
     articles:[],
-    isLoading:true
+    isLoading:true,
+    newArticle:{
+      votes:0,
+  
+      author:"weegembump",
+      
+    }
   }
     componentDidMount() {
     this.fetchArticles()
   }
   
   render() {
-    console.log(this.state.articles[0])
     const {articles} = this.state
+    console.log(this.state.newArticle)
     return (
+      <>
+      <SortingBlock sendArticle={this.sendArticle} setArticleState={this.setArticleState} />
       <ul className="article__list">
      { articles.map((article)=>{
         return <ArticleCard key={article.article_id} {...article} upVote= {this.upVote} downVote={this.downVote}/>
       })}
         
       </ul>
+      </>
     )
   }
-  upVote= ()=>{
-    this.setState(currentState=>{
-      return {votes: currentState++}
+  setArticleState =(field,inputFields) =>{
+    const newArticle = {...this.state.newArticle}
+    newArticle[field] = inputFields[field]
+    this.setState((currentState)=>{
+      return {...currentState.newArticle,newArticle}
     })
+   
   }
-    downVote = ()=>{
-    this.setState(currentState=>{
-      return {currentState:{ votes:currentState--}}
+ 
+  sendArticle= ()=>{
+    api.postArticle(this.state.newArticle).then((article)=>{
+      this.setState(currentState=>{
+        return {articles:[article,...currentState.articles]}
+      })
     })
   }
     fetchArticles (){
@@ -38,4 +54,9 @@ export default class ArticleList extends Component {
       this.setState({articles ,isLoading:false})
     })
   }
+
+
+
+
+   
 }

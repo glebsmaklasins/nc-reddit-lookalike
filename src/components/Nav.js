@@ -3,7 +3,7 @@ import * as api from "../api"
 
 export default class Nav extends Component {
   state ={
-      username:""
+      username:"weegembump"
     }
 
     componentDidMount() {
@@ -15,7 +15,7 @@ export default class Nav extends Component {
     return (
       <div className="nav">
       <img className="logo" src="img/logo.png" alt="logo"/>
-      <p>>>>>user</p>  
+      <p>logged in as {this.state.username}</p>  
       </div>
     )
   }

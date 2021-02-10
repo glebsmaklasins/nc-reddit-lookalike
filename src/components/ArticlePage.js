@@ -10,7 +10,7 @@ export default class ArticlePage extends Component {
   render() {
     return (
     
-        <div>
+      <div>
        <Article  props={this.props}/>
        <CommentSection  props={this.props}/>
       </div>

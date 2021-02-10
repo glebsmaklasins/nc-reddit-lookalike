@@ -1,7 +1,7 @@
 import axios from "axios"
 
-export const getAllArticles = ()=> {
-  return axios.get("https://ncnews-server.herokuapp.com/api/articles")
+export const getAllArticles = (sorted)=> {
+  return axios.get("https://ncnews-server.herokuapp.com/api/articles",{params:{sort_by:sorted}})
   .then(({data})=>{
     return data.articles
   })
@@ -13,8 +13,8 @@ export const getFeaturedArticle = ()=>{
   })
 }
 
-export const getCommentsByID =(id)=>{
-  return axios.get(`https://ncnews-server.herokuapp.com/api/articles/${id}/comments`).then(({data})=>{
+export const getCommentsByID =(id,sorted)=>{
+  return axios.get(`https://ncnews-server.herokuapp.com/api/articles/${id}/comments`,{params:{sort_by:sorted}}).then(({data})=>{
     return data.comments
   })
 }
@@ -42,4 +42,20 @@ export const postCommentByArticleID = (id,body) =>{
   }).catch(res=>{
     console.log(res)
   })
+}
+
+
+export const patchCommentVotes = (id,voteChange) =>{
+  return axios.patch(`https://ncnews-server.herokuapp.com/api/comments/${id}`,{inc_votes:voteChange})
+}
+
+export const patchArticleVotes = (id,voteChange) =>{
+  return axios.patch(`https://ncnews-server.herokuapp.com/api/articles/${id}`,{inc_votes:voteChange})
+}
+
+export const deleteComment = (id) =>{
+  return axios.delete (`https://ncnews-server.herokuapp.com/api/comments/${id}`)
+}
+export const deleteArticle = (id) =>{
+  return axios.delete (`https://ncnews-server.herokuapp.com/api/articles/${id}`)
 }

@@ -2,8 +2,9 @@
 import CommentSorting from "../singlearticlePage/CommentSorting"
 import CommentCard from "../singlearticlePage/ComentCard"
 import * as api from "../../api"
-import {upVote,downVote} from "../../utils/votes"
+
 import React, { Component } from 'react'
+import AddComment from "./AddComment"
 
 
 export default class CommentSection extends Component {
@@ -15,14 +16,16 @@ export default class CommentSection extends Component {
   componentDidMount() {
     this.fetchComments()
   }
+  
   render() {
+
     const {comments}=this.state
-    console.log(this.state.newComment)
     return (
        <div>
-    <CommentSorting sendComment={this.sendComment} setCommentBody={this.setCommentBody}/>
+    <CommentSorting fetchComments={this.fetchComments} id={this.props.props.article_id}/>
+    <AddComment sendComment={this.sendComment} setCommentBody={this.setCommentBody}/>
     {comments.map((comment)=>{
-      return <CommentCard key={comment.comment_id} {...comment} upVote={upVote} downVote={downVote}/>
+      return <CommentCard removeComment={this.removeComment} key={comment.comment_id} {...comment} />
     })}
     
     </div>
@@ -31,18 +34,26 @@ export default class CommentSection extends Component {
   setCommentBody = (value)=>{
     this.setState({newComment:{body:value.target.value,author:"weegembump"}})
   }
-  sendComment=()=>{
+  sendComment=(e)=>{
+    e.preventDefault()
     api.postCommentByArticleID(this.props.props.article_id,this.state.newComment).then((comment)=>{
       this.setState((currentState)=>{
-        console.log(currentState)
+        console.log(comment)
         return {comments:[comment,...currentState.comments ]}
       })
     })
   }
-  fetchComments(){
-  api.getCommentsByID(this.props.props.article_id).then((comments)=>{
+  fetchComments(sort){
+  api.getCommentsByID(this.props.props.article_id,sort).then((comments)=>{
+    console.log(comments)
     this.setState({comments,isLoading:false})
   })
+}
+removeComment=(id)=>{
+  api.deleteComment(id).then((res)=>{
+        this.fetchComments()
+      })
+
 }
  
 }

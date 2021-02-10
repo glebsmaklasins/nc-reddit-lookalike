@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import * as api from "../../api"
 import ArticleCard from "./ArticleCard"
 import SortingBlock from "./SortingBlock"
+import AddArticle from "./AddArticle"
+
 
 export default class ArticleList extends Component {
   state ={
@@ -12,7 +14,8 @@ export default class ArticleList extends Component {
   
       author:"weegembump",
       
-    }
+    },
+    deleted:0
   }
     componentDidMount() {
     this.fetchArticles()
@@ -20,13 +23,15 @@ export default class ArticleList extends Component {
   
   render() {
     const {articles} = this.state
-    console.log(this.state.newArticle)
+   
+   
     return (
       <>
-      <SortingBlock sendArticle={this.sendArticle} setArticleState={this.setArticleState} />
+      <SortingBlock {...articles} fetchArticles={this.fetchArticles} />
+      <AddArticle sendArticle={this.sendArticle} setArticleState={this.setArticleState}/>
       <ul className="article__list">
      { articles.map((article)=>{
-        return <ArticleCard key={article.article_id} {...article} upVote= {this.upVote} downVote={this.downVote}/>
+        return <ArticleCard key={article.article_id} {...article} removeArticle={this.removeArticle}/>
       })}
         
       </ul>
@@ -42,17 +47,25 @@ export default class ArticleList extends Component {
    
   }
  
-  sendArticle= ()=>{
+  sendArticle= (e)=>{
+    e.preventDefault()
     api.postArticle(this.state.newArticle).then((article)=>{
       this.setState(currentState=>{
         return {articles:[article,...currentState.articles]}
       })
     })
   }
-    fetchArticles (){
-    api.getAllArticles().then((articles)=>{
+    fetchArticles (sort){
+      console.log(sort)
+    api.getAllArticles(sort).then((articles)=>{
       this.setState({articles ,isLoading:false})
     })
+  }
+  removeArticle= (id)=>{
+      api.deleteArticle(id).then((res)=>{
+        this.fetchArticles()
+      })
+    
   }
 
 

@@ -29,3 +29,9 @@ border:2px solid blue;
 .article__single{
 border: 2px solid green;
 }
+.article__sumbit{
+border: 2px solid red;
+}
+.comment__submit{
+border: 2px solid red;
+}

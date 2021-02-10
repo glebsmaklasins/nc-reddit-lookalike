@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as api from "../../api"
+import ArticleVote from "../ArticleVotes"
 
 export default class Article extends Component {
   state={
@@ -21,11 +22,7 @@ export default class Article extends Component {
       </header>
      
         <p>{article.body}</p>
-         <div className="votes">
-      <p>{article.votes}</p>
-      <img src="img/upvote.png" alt="up" />
-      <img src="img/downvote.png" alt="down" />
-      </div>
+       <ArticleVote {...this.state.article}/>
       <p>{article.comment_count}</p>
       </div>
       

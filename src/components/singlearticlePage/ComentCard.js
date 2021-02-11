@@ -2,7 +2,7 @@ import React from 'react'
 import CommentVotes from "../CommentVotes"
 export default function ComentCard(props) {
   return (
-     props.author === "weegembump" ?
+     props.author === props.username ?
      <div className="comment__card">
     <img src="#" alt="icon"/>
       <p>{props.author}</p>

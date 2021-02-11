@@ -2,9 +2,10 @@ import React from 'react'
 import {Link} from "@reach/router"
 import ArticleVotes from "../ArticleVotes"
 export default function ArticleCard(props) {
+  console.log(props)
   return (
-    props.author === "weegembump" ? <li className="article__card">
-    <Link to={`articles/${props.article_id}`}>
+    props.author === props.username ? <li className="article__card">
+    <Link to={`/articles/${props.article_id}`}>
      <p>{props.created_at}</p>
       <p>{props.author}</p>
        <p>{props.title}</p>
@@ -13,7 +14,7 @@ export default function ArticleCard(props) {
   <ArticleVotes {...props}/>
      
     </li> :<li className="article__card">
-    <Link to={`articles/${props.article_id}`}>
+    <Link to={`/articles/${props.article_id}`}>
      <p>{props.created_at}</p>
       <p>{props.author}</p>
        <p>{props.title}</p>

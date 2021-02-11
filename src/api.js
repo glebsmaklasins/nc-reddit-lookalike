@@ -1,7 +1,18 @@
 import axios from "axios"
+//slug:topic
 
-export const getAllArticles = (sorted)=> {
-  return axios.get("https://ncnews-server.herokuapp.com/api/articles",{params:{sort_by:sorted}})
+export const getTopics = () =>{
+  return axios.get("https://ncnews-server.herokuapp.com/api/topics").then(({data})=>{
+    return data.topics
+  })
+}
+
+export const getAllArticles = (sorted="votes",topic)=> {
+  return axios.get("https://ncnews-server.herokuapp.com/api/articles", {
+  params: {
+    sort_by:sorted,
+    topic:topic
+  }})
   .then(({data})=>{
     return data.articles
   })

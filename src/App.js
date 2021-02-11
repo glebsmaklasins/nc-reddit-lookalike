@@ -3,21 +3,27 @@ import './App.css';
 import Nav from "./components/Nav"
 import Landing from "./components/Landing"
 import ArticlePage from "./components/ArticlePage"
-import Article from "./components/singlearticlePage/Article"
 import {Router} from "@reach/router"
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-    <Nav/>
+
+export default class App extends Component {
+  state = {
+    username:""
+  }
+  render() {    
+    return (
+       <div className="App">
+    <Nav handleUsername={this.handleUsername} {...this.state}/>
     <Router >
-      <Landing path="/"/>
-      <Landing path="/:sorted/"/>
-      <ArticlePage path="/articles/:article_id"/>
- 
+      <Landing path="/" {...this.state}/>
+      <Landing path="/:topic/articles" {...this.state}/>
+      <ArticlePage path="articles/:article_id" {...this.state}/>
     </Router>
     </div>
-  );
+    )
+  }
+  handleUsername =(username)=>{
+    this.setState({username})
+  }
 }
-
-export default App;

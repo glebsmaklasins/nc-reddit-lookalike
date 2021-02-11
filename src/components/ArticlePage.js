@@ -11,8 +11,8 @@ export default class ArticlePage extends Component {
     return (
     
       <div>
-       <Article  props={this.props}/>
-       <CommentSection  props={this.props}/>
+       <Article  {...this.props}/>
+       <CommentSection  {...this.props}/>
       </div>
         
     )

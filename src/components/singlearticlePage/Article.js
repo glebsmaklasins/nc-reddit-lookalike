@@ -5,13 +5,22 @@ import ArticleVote from "../ArticleVotes"
 export default class Article extends Component {
   state={
     article:{},
-    isLoading:true
+    isLoading:true,
+    username:null
   }
   componentDidMount() {
     this.fetchSingleArticle()
   }
+  componentDidUpdate(prevProps, prevState) {
+    const {username}=this.props
+    if(username !==prevState.username){
+      this.setUsername()
+    }
+  }
+  
   
   render() {
+    console.log(this.state.username)
     const {article}=this.state
     return (
       <div className="article__single">
@@ -22,15 +31,23 @@ export default class Article extends Component {
       </header>
      
         <p>{article.body}</p>
-       <ArticleVote {...this.state.article}/>
+        {this.state.username && (
+          <>
+           <ArticleVote {...this.state.article}/>
+          </>
+        )}
+       
       <p>{article.comment_count}</p>
       </div>
       
     )
   }
   fetchSingleArticle(){
-    api.getSingleArticle(this.props.props.article_id).then((article)=>{
+    api.getSingleArticle(this.props.article_id).then((article)=>{
       this.setState({article,isLoading:false})
     })
+  }
+  setUsername = ()=>{
+    this.setState({username:this.props.username})
   }
 }

@@ -13,7 +13,7 @@ export default class Landing extends Component {
       <div>
       <Featured />
       
-      <ArticleList/>
+      <ArticleList {...this.props}/>
 
 
         

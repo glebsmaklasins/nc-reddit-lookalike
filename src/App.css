@@ -1,25 +1,23 @@
 .App {
   text-align: center;
-  display:grid;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  
 }
-.logo {
-  width: 10%;
-}
+
 img {
   width: 15%;
 }
 .article__list {
   border: 1px solid pink;
+  list-style: none;
 }
 .article__card{
   border:2px solid blue
 }
-.nav {
-  border:1px solid black
-}
-.featured{
-  border: 1px solid green;
-}
+
+
 .comment__card {
 border:2px solid blue;
 }
@@ -29,9 +27,7 @@ border:2px solid blue;
 .article__single{
 border: 2px solid green;
 }
-.article__sumbit{
-border: 2px solid red;
-}
+
 .comment__submit{
 border: 2px solid red;
 }

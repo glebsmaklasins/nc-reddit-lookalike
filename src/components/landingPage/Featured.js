@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react'
 import * as api from "../../api"
+import "./Featured.css"
+import {Link} from "@reach/router"
+
 
 export default class Featured extends Component {
    state ={
@@ -17,10 +20,10 @@ export default class Featured extends Component {
     const {article} = this.state
     return (
       <div className="featured" >
-        <p>Featured pepe</p>
-        <p>/{article.topic}</p>
+      <h1>Featured Doge</h1>
+      <p>{article.author}</p>
+      <Link to={`/${article.topic}/articles`}><p>/{article.topic}</p></Link>
         <p>{article.title}</p>
-         <p>{article.author}</p>
       </div>
     )
   }

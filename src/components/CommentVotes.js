@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import * as api from "../api"
+import upvote from "../img/reallike.png"
+import downvote from "../img/dislike.png"
 
 export default class CommentVotes extends Component {
 
@@ -12,9 +14,10 @@ const {votes}= this.props
 const {voteChange} = this.state
     return (
       <div className="commentVotes">
-      <p>{votes + voteChange }</p>
-      <button disabled={voteChange===1} onClick={()=>{this.handleClick(1)}}><img src="img/upvote.png" alt="" /></button>
-      <button disabled={voteChange===-1} onClick={()=>{this.handleClick(-1)}}><img src="img/downvote.png" alt="" /></button>
+   
+      <button disabled={voteChange===1} onClick={()=>{this.handleClick(1)}}><img src={upvote} alt="" /></button>
+         <p>{votes + voteChange }</p>
+      <button disabled={voteChange===-1} onClick={()=>{this.handleClick(-1)}}><img src={downvote} alt="" /></button>
       
       </div>
     )

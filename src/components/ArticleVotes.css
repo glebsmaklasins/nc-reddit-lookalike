@@ -1,0 +1,18 @@
+.articleVotes{
+  width: 25%;
+}
+.articleVotes button{
+  background-color: #c7a151;
+  border-radius: 30%;
+  width: 50px;
+}
+.articleVotes img{
+  
+  width: 100%;
+}
+.articleVotes p {
+  margin: 0;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+}

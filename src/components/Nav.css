@@ -1,0 +1,60 @@
+.nav {
+  width: 80%;
+  display: flex;
+  position: fixed;
+  background-color: #c7a151;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+
+}
+.nav a{
+  width: 20%;
+}
+.logo{
+  padding: 10%;
+  width: 100%;
+}
+.nav input{
+  margin-top: 10%;
+  margin-left: 10%;
+  width:50%;
+}
+.topics {
+  padding: 5%;
+}
+.nav .login button{
+  border-radius: 9999px;
+  background-color: white;
+  width: 30%;
+  margin-left: 5%;
+}
+.nav p {
+  margin-top: 10%;
+  margin-left: 4%;
+}
+.logout {
+border-radius: 9999px;
+background-color: #0079D3;
+color: white;
+  margin-top: 10%;
+}
+.topic {
+  display: flex;
+  justify-content: space-between;
+}
+.topic a{
+  text-decoration: none;
+  color :white;
+}
+.topic a:link {
+  text-decoration: none;
+}
+.topic a:visited {
+  text-decoration: none;
+}
+.topic a:active {
+  text-decoration: none;
+}

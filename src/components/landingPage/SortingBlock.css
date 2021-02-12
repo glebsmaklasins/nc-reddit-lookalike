@@ -1,0 +1,17 @@
+.sortingArticles p {
+margin-top: 2%;
+text-transform: uppercase;
+color: white;
+font-weight: 700;
+}
+.sortVote{
+  border-radius: 999px;
+  width:25%;
+}
+.sortingArticles img{
+  width: 100%;
+}
+.sortTime {
+  border-radius: 999px;
+  width: 27%;
+}

@@ -12,9 +12,8 @@ img {
 .article__list {
   border: 1px solid pink;
   list-style: none;
-}
-.article__card{
-  border:2px solid blue
+  padding: 10px;
+  
 }
 
 

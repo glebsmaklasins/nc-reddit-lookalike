@@ -1,3 +1,8 @@
 .comment__submit textarea{
+  
   resize: none;
+}
+.comment__submit {
+  border: 2px solid white;
+
 }

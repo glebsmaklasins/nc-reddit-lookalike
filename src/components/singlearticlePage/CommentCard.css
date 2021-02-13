@@ -25,7 +25,7 @@ justify-content: space-between;
 flex-direction: row;
 }
 .commentBody {
-
+text-align:left;
   font-size: 20 px;
   color: white;
   

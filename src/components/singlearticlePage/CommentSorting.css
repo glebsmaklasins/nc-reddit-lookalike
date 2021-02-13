@@ -1,0 +1,22 @@
+.comment__sorting p {
+  margin-top: 2%;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+}
+.comment__sorting button{
+  margin-right: 10px;
+}
+.sortCommentsByVotes {
+  border-radius: 999px;
+  width: 25%;
+}
+
+.comment__sorting img {
+  width: 100%;
+}
+
+.sortCommentsByDate {
+  border-radius: 999px;
+  width: 25%;
+}

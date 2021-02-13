@@ -1,4 +1,4 @@
-li {
+.comment__card {
   margin-top: 10px;
   border: 3px solid #CFA85C;
   border-radius: 10px;
@@ -7,35 +7,22 @@ li {
   justify-content: flex-end;
   align-items: center;
 
-  background-color:#c7a151;
+  background-color: #c7a151;
 }
-.articleAuthor  {
+
+.commentAuthor {
   font-size: 10px;
   color: white;
 }
-.articleBody {
+
+.commentBody {
   padding-left: 25px;
   width: 70%;
-  font-size:20 px ;
+  font-size: 20 px;
   color: white;
 }
-.articleDate{
+
+.commentDate {
   font-size: 10px;
   color: white;
-}
-.li a {
-  text-decoration: none;
-  color: white;
-}
-
-li  a:link {
-  text-decoration: none;
-}
-
-li  a:visited {
-  text-decoration: none;
-}
-
-.li a:active {
-  text-decoration: none;
 }

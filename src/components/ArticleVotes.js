@@ -22,6 +22,7 @@ const {voteChange} = this.state
       </div>
     )
   }
+  
   handleClick =(voteChange)=>{
     this.setState((cs)=>{
       return{voteChange:cs.voteChange + voteChange}

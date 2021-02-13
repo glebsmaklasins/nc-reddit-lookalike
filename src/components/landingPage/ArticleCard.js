@@ -3,6 +3,7 @@ import {Link} from "@reach/router"
 import ArticleVotes from "../ArticleVotes"
 import dayjs from 'dayjs'
 import "./ArticleCard.css"
+import deleteimg from "../../img/delete.png"
 
 export default function ArticleCard(props) {
  const date = dayjs(props.created_at)
@@ -14,7 +15,7 @@ const formatedDate = String(date.$d).slice(0,25)
        <p className="articleBody">{props.title}</p>
         <p className="articleDate">{formatedDate} </p>
     </Link>
-       <button onClick={()=>{props.removeArticle(props.article_id)}}>X</button>
+       <button className="delete" onClick={()=>{props.removeArticle(props.article_id)}}><img  className="deleteImg" src={deleteimg} alt=""/> </button>
   <ArticleVotes {...props}/>
      
     </li> :<li className="article__card">

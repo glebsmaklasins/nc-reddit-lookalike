@@ -12,7 +12,6 @@ export default class CommentSection extends Component {
     comments:[],
     isLoading:true,
     newComment:{},
-    username:null
 
   }
   componentDidMount() {

@@ -6,11 +6,9 @@
   
 }
 
-img {
-  width: 15%;
-}
+
 .article__list {
-  border: 1px solid pink;
+
   list-style: none;
   padding: 10px;
   
@@ -20,13 +18,13 @@ img {
 .comment__card {
 border:2px solid blue;
 }
-.comment__sorting{
-  border: 2px solid pink;
-}
-.article__single{
-border: 2px solid green;
+
+.delete {
+  background-color: #c7a151;
+  width: 35%;
+  border: 9999px;
 }
 
-.comment__submit{
-border: 2px solid red;
+.deleteImg {
+  width: 100%;
 }

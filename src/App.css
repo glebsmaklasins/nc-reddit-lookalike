@@ -1,8 +1,11 @@
 .App {
+  
   text-align: center;
-  width: 80%;
+  width: 375px;
+  height:812px;
   display: block;
   margin: 0 auto;
+
   
 }
 

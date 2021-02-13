@@ -18,7 +18,6 @@ export default class Nav extends Component {
     }
 
   render() {
-    console.log(this.props)
     const {usernameInput}= this.state
     const {topics}= this.state
     return (

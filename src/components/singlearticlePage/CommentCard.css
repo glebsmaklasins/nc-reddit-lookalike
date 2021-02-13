@@ -1,3 +1,10 @@
+.comment__section{
+    height: 420px;
+    overflow: auto;
+}
+.comment__section::-webkit-scrollbar {
+  display: none;
+}
 .comment__card {
   margin-top: 10px;
   border: 3px solid #CFA85C;

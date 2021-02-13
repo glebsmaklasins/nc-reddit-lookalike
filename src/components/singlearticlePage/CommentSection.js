@@ -36,10 +36,12 @@ export default class CommentSection extends Component {
        <AddComment sendComment={this.sendComment} setCommentBody={this.setCommentBody}/>
       </>
     )}
-   
-    {comments.map((comment)=>{
+   <div className="comment__section">
+{comments.map((comment)=>{
       return <CommentCard removeComment={this.removeComment} key={comment.comment_id} {...comment} {...this.state}/>
     })}
+   </div>
+    
     
     </div>
     )

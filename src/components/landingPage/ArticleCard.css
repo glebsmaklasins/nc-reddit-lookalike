@@ -1,4 +1,4 @@
-li {
+.article__list li {
   margin-top: 10px;
   border: 3px solid #CFA85C;
   border-radius: 10px;
@@ -23,7 +23,7 @@ li {
   font-size: 10px;
   color: white;
 }
-.li a {
+li a {
   text-decoration: none;
   color: white;
 }
@@ -36,6 +36,6 @@ li  a:visited {
   text-decoration: none;
 }
 
-.li a:active {
+li a:active {
   text-decoration: none;
 }

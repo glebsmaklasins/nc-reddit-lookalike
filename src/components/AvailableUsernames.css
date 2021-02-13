@@ -1,0 +1,12 @@
+.AvailableUsernames{
+  border: solid 2px white;
+  position:  absolute;
+  transform: translate(-100%);
+  width: 40%;
+  font-size: 12px;
+  color: white;
+  background-color: #c7a151;
+}
+.AvailableUsernames {
+margin: 0;
+}

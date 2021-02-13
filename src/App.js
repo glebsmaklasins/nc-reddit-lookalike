@@ -11,10 +11,11 @@ export default class App extends Component {
   state = {
     username:""
   }
-  render() {    
+  render() {  
+ 
     return (
        <div className="App">
-    <Nav handleUsername={this.handleUsername} {...this.state}/>
+    <Nav logOut={this.logOut} handleUsername={this.handleUsername} {...this.state}/>
     <Router >
       <Landing path="/" {...this.state}/>
       <Landing path="/:topic/articles" {...this.state}/>
@@ -23,7 +24,11 @@ export default class App extends Component {
     </div>
     )
   }
-  handleUsername =(username)=>{
+  handleUsername =(e,username)=>{
+    e.preventDefault()
     this.setState({username})
+  }
+  logOut=()=>{
+    this.setState({username:""})
   }
 }

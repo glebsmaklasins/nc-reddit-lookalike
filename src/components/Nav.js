@@ -3,11 +3,13 @@ import * as api from "../api"
 import {Link} from "@reach/router"
 import logo from '../img/logo.png'
 import "./Nav.css"
+import AvailabeUsernames from "./AvailableUsernames"
 
 export default class Nav extends Component {
   state ={
-      username:null,
-      topics : []
+      username:"",
+      topics : [],
+      usernameInput:""
     }
 
     componentDidMount() {
@@ -16,21 +18,24 @@ export default class Nav extends Component {
     }
 
   render() {
+    console.log(this.props)
+    const {usernameInput}= this.state
     const {topics}= this.state
     return (
       <div className="nav">
       <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
-     {this.state.username && (
+     {this.props.username && (
         <>
-      <p>logged in as {this.state.username}</p>  
-      <button className="logout" onClick={this.logOut}>log out</button>
+      <p>logged in as {this.props.username}</p>  
+      <button className="logout" onClick={this.props.logOut}>log out</button>
       </>
       )}
-      {!this.state.username && (
+      {!this.props.username && (
         <>
-        <form  action="submit" className="login">
-        <input type="text" onChange={(e)=>{this.props.handleUsername(e.target.value)}}/>
-        <button onClick={this.setUsername}>log in</button>
+        <AvailabeUsernames/>
+        <form  action="#" className="login">
+        <input type="text" onChange={(e)=>{this.setUsernameInput(e,e.target.value)}}/>
+        <button onClick={(e)=>{this.props.handleUsername(e,usernameInput)}}>log in</button>
       </form>
         </>
       )}
@@ -45,16 +50,14 @@ export default class Nav extends Component {
       </div>
     )
   }
-  setUsername =(e)=>{
+  setUsernameInput =(e,usernameInput)=>{
     e.preventDefault()
-    this.setState({username:this.props.username})
+    this.setState({usernameInput})
   }
   fetchTopics(){
     api.getTopics().then((topics)=>{
       this.setState({topics})
     })
   }
-  logOut=()=>{
-    this.setState({username:null})
-  }
+  
 }

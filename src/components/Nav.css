@@ -58,3 +58,7 @@ color: white;
 .topic a:active {
   text-decoration: none;
 }
+.loggedIn{
+
+  color: white;
+}

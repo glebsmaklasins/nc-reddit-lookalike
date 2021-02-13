@@ -5,16 +5,49 @@
 .comment__section::-webkit-scrollbar {
   display: none;
 }
+
+
+
 .comment__card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 10px;
   border: 3px solid #CFA85C;
   border-radius: 10px;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  align-items: center;
-
   background-color: #c7a151;
+}
+.comment__userinfo{
+padding: 0 30px;
+display: flex;
+width: 100%;
+justify-content: space-between;
+flex-direction: row;
+}
+.commentBody {
+
+  font-size: 20 px;
+  color: white;
+  
+  width: 50%;
+}
+.votes__block {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.delete_block{
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 25%;
+}
+.delete_block p{
+  color:white;
 }
 
 .commentAuthor {
@@ -22,12 +55,6 @@
   color: white;
 }
 
-.commentBody {
-  padding-left: 25px;
-  width: 70%;
-  font-size: 20 px;
-  color: white;
-}
 
 .commentDate {
   font-size: 10px;

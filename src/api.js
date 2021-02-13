@@ -19,7 +19,7 @@ export const getAllArticles = (sorted="votes",topic)=> {
 }
 
 export const getFeaturedArticle = ()=>{
-  return axios.get(`https://ncnews-server.herokuapp.com/api/articles/${Math.floor(Math.random() * 10)}`).then(({data})=>{
+  return axios.get(`https://ncnews-server.herokuapp.com/api/articles/${5}`).then(({data})=>{
     return data.article
   })
 }

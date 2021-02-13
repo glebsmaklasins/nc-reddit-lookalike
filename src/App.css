@@ -24,10 +24,10 @@ border:2px solid blue;
 
 .delete {
   background-color: #c7a151;
-  width: 35%;
+  width: 100%;
   border: 9999px;
 }
 
 .deleteImg {
-  width: 100%;
+  width: 40%;
 }

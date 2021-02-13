@@ -38,7 +38,10 @@ export default class Article extends Component {
         <p className="singleArticle_body">{article.body}</p>
         {this.state.username !== article.author && (
           <>
-           <ArticleVote {...this.state.article}/>
+          <div className="votes__block">
+            <ArticleVote {...this.state.article}/>
+          </div>
+           
           </>
         )}
        

@@ -18,12 +18,7 @@ export default class CommentSection extends Component {
 
     this.fetchComments()
   }
-    componentDidUpdate(prevProps, prevState) {
-    const {username}=this.props
-    if(username !==prevState.username){
-      this.setUsername()
-    }
-  }
+
   
   render() {
 
@@ -31,14 +26,14 @@ export default class CommentSection extends Component {
     return (
        <div>
     <CommentSorting fetchComments={this.fetchComments} article_id={this.props.article_id} />
-    {this.state.username && (
+    {this.props.username && (
       <>
        <AddComment sendComment={this.sendComment} setCommentBody={this.setCommentBody}/>
       </>
     )}
    <div className="comment__section">
 {comments.map((comment)=>{
-      return <CommentCard removeComment={this.removeComment} key={comment.comment_id} {...comment} {...this.state}/>
+      return <CommentCard {...this.props} removeComment={this.removeComment} key={comment.comment_id} {...comment} {...this.state}/>
     })}
    </div>
     
@@ -71,9 +66,7 @@ removeComment=(id)=>{
       })
 
 }
-setUsername = ()=>{
-  this.setState({username : this.props.username})
-}
+
  
 }
 

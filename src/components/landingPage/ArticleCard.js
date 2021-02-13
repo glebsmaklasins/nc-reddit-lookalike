@@ -8,7 +8,7 @@ import deleteimg from "../../img/delete.png";
 export default function ArticleCard(props) {
   const date = dayjs(props.created_at);
   const formatedDate = String(date.$d).slice(0, 25);
-  console.log(props.author,props)
+
   return props.author === props.username ? (
     <li className="article__card">
       <Link to={`/articles/${props.article_id}`}>

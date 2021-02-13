@@ -25,7 +25,7 @@ export default class Nav extends Component {
       <Link to="/"><img className="logo" src={logo} alt="logo"/></Link>
      {this.props.username && (
         <>
-      <p>logged in as {this.props.username}</p>  
+      <p className="loggedIn">logged in as {this.props.username}</p>  
       <button className="logout" onClick={this.props.logOut}>log out</button>
       </>
       )}

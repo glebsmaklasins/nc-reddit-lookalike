@@ -1,9 +1,9 @@
 .AvailableUsernames{
   border: solid 2px white;
   position:  absolute;
-  transform: translate(-100%);
+  transform: translate(-70%);
   width: 40%;
-  font-size: 12px;
+  font-size: 15px;
   color: white;
   background-color: #c7a151;
 }

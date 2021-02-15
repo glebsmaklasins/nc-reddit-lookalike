@@ -56,7 +56,6 @@ export default class CommentSection extends Component {
   fetchComments=(sort)=>{
     const {article_id}= this.props
   api.getCommentsByID(article_id,sort).then((comments)=>{
-    console.log(comments)
     this.setState({comments,isLoading:false})
   })
 }

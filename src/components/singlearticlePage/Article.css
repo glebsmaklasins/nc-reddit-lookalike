@@ -17,3 +17,6 @@
 .singleArticle_body {
   width: 70%;
 }
+.article__single p {
+  padding-left: 10px;
+}

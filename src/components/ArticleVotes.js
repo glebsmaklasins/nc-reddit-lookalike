@@ -15,7 +15,7 @@ export default class ArticleVotes extends Component {
     return (
       <div className="articleVotes">
         <button
-          disabled={voteChange === 1}
+          disabled={voteChange === 1 || !this.props.username}
           onClick={() => {
             this.handleClick(1);
           }}
@@ -24,7 +24,7 @@ export default class ArticleVotes extends Component {
         </button>
         <p>{votes + voteChange}</p>
         <button
-          disabled={voteChange === -1}
+          disabled={voteChange === -1 || !this.props.username}
           onClick={() => {
             this.handleClick(-1);
           }}

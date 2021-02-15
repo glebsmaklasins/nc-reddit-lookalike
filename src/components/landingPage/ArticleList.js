@@ -37,7 +37,7 @@ export default class ArticleList extends Component {
           </>
         )}
 
-        <ul className="article__list">
+        <div className="article__list">
           {articles.map((article) => {
             return (
               <ArticleCard
@@ -49,7 +49,7 @@ export default class ArticleList extends Component {
               />
             );
           })}
-        </ul>
+        </div>
       </>
     );
   }

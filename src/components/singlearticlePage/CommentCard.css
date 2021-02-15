@@ -6,8 +6,6 @@
   display: none;
 }
 
-
-
 .comment__card {
   display: flex;
   align-items: center;
@@ -37,6 +35,7 @@ text-align:left;
   flex-direction: column;
 justify-content: center;
 align-items: center;
+padding-bottom: 10px;
 }
 .delete_block{
   padding-top: 10%;

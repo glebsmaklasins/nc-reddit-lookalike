@@ -10,31 +10,50 @@ export default function ArticleCard(props) {
   const formatedDate = String(date.$d).slice(0, 25);
 
   return props.author === props.username ? (
-    <li className="article__card">
-      <Link to={`/articles/${props.article_id}`}>
+    <div className="article__card">
+      <div className="article__userinfo">
         <p className="articleAuthor">{props.author}</p>
-        <p className="articleBody">{props.title}</p>
         <p className="articleDate">{formatedDate} </p>
-      </Link>
-      <button
-        className="delete"
-        onClick={() => {
-          props.removeArticle(props.article_id);
-        }}
-      >
-        <img className="deleteImg" src={deleteimg} alt="" />{" "}
-      </button>
-      <ArticleVotes {...props} />
-    </li>
-  ) : (
-    <li className="article__card">
+      </div>
+      <div className="votes__block">
+        <ArticleVotes {...props} />
+      </div>
+      <div className="articleBody">
       <Link to={`/articles/${props.article_id}`}>
-        <p className="articleAuthor">{props.author}</p>
-        <p className="articleBody">{props.title}</p>
-        <p className="articleDate">{formatedDate} </p>
+        <p >{props.title}</p>
       </Link>
+      </div>
+          <div className="delete_block">
+        <button
+          className="delete"
+          onClick={() => {
+            props.removeArticle(props.article_id);
+          }}
+        >
+          <img className="deleteImg" src={deleteimg} alt="" />
+        </button>
+      
 
-      <ArticleVotes {...props} />
-    </li>
+    
+    </div>
+    </div>
+    
+
+  ) : (
+    <div className="article__card">
+      <div className="article__userinfo">
+        <p className="articleAuthor">{props.author}</p>
+        <p className="articleDate">{formatedDate} </p>
+      </div>
+      <div className="votes__block">
+        <ArticleVotes {...props} />
+      </div>
+      <div className="articleBody">
+      <Link to={`/articles/${props.article_id}`}>
+        <p >{props.title}</p>
+      </Link>
+      </div>
+    
+    </div>
   );
 }

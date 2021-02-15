@@ -4,7 +4,6 @@ import votes from "../../img/sort_comments.png"
 import time from "../../img/doge_time.png"
 
 export default function CommentSorting(props) {
-  console.log(props)
   return (
     <div className="comment__sorting">
     <p>such comments , sort wow</p>

@@ -23,7 +23,6 @@ export default class Article extends Component {
   
   render() {
   
-    console.log(this.state.username)
     const {article}=this.state
     const date = dayjs(article.created_at)
   const formatedDate = String(date.$d).slice(0,25)
